@@ -1,0 +1,45 @@
+ # DATA PREPROCESSING FOR MACHINE LEARNING 
+
+IMPORTING THE REQUIRED LIBRARIES 
+
+    #Data preprocessing 
+    #Importing the libraries 
+    import numpy as np
+    import matplotlib.pyplot as plt
+    import pandas as pd
+
+IMPORTING THE DATASET 
+
+    #importing the datasets 
+  dataset =pd.read_csv
+
+   #creating the dependent variable vector 
+  y=dataset.iloc[:,3].values
+
+  #creating matrix of the features(independent variables)
+  x=dataset.iloc[:,:-1].values
+
+ #taking care of missing data (replacing with the mean)
+from sklearn.preprocessing import imputer
+imputer=imputer(missing_values='NaN', Strategy='mean',ais=0)
+
+  #fitting the imputer object to the matrix of features x
+  imputer=imputer.fit(xx[:,1:3])
+
+ #replacinf the missing data by the mean of the column 
+x[:,1:3]= imputer.transform([:, 1:3])
+
+
+ENCODING THE CATEGORICAL DATA 
+
+from sklearn . preprocessing import labelencoder . onehotencoder
+labelencoder_ = labelencoder()
+x[:,0] = labelencoder_x . fit transform (x[:,0])
+
+#dummy encoding 
+onehotencoder=onehotencoder(categorical_features=[0]}
+x = onehotencoder.fit_transform(x).toaraay()
+
+#encoding categorical data 
+labelencoder_y = labelencoder()
+y= labelencoder_y.fir_transform(y)
